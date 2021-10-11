@@ -4,5 +4,4 @@ int ft_isalnum(int n)
 		return (1);
 	else
 		return (0);
-	
 }
