@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 	printf("\n");
 
 	int array3[5];
-	memcpy(array3, array1, sizeof(array1));
+	ft_memcpy(array3, array1, sizeof(array1));
 
 	for (int i = 0; i < 5; ++i)
 	{
@@ -29,6 +29,6 @@ int main(int argc, char *argv[])
 	str = malloc(sizeof(char) * 4);
 	str2 = malloc(sizeof(char) * 4);
 	printf("memcpy = %s\n", memcpy(str, argv[1], 4));
-	printf("ft_memcpy = %s\n", memcpy(str2, argv[1], 4));
+	printf("ft_memcpy = %s\n", ft_memcpy(str2, argv[1], 4));
 	return 0;
 }

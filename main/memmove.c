@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 	printf("\n");
 
 	int array3[5];
-	memmove(array3, array1, sizeof(array1));
+	ft_memmove(array3, array1, sizeof(array1));
 
 	for (int i = 0; i < 5; ++i)
 	{
@@ -29,8 +29,8 @@ int main(int argc, char *argv[])
 	str = malloc(sizeof(char) * 4);
 	str2 = malloc(sizeof(char) * 4);
 	printf("memmove = %s\n", memmove(str, argv[1], 4));
-	printf("ft_memmove = %s\n", memmove(str2, argv[1], 4));
-	printf("memmove = %s\n", memmove(str, "te", 3));
-	printf("ft_memmove = %s\n", memmove(str2, "te", 3));
+	printf("ft_memmove = %s\n", ft_memmove(str2, argv[1], 4));
+	printf("memmove = %s\n", memmove(str, "te", 2));
+	printf("ft_memmove = %s\n", ft_memmove(str2, "te", 2));
 	return 0;
 }
