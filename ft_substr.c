@@ -1,6 +1,7 @@
 #include <stdlib.h>
 size_t	ft_strlen(char *str);
-char *ft_substr(char const *s, unsigned int start, size_t len)
+
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*str;
 	char	*res;
@@ -8,7 +9,7 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 
 	str = (char *)s;
 	if ((size_t)start >= ft_strlen(str) || len == 0)
-		return "";
+		return ("");
 	res = malloc(len * sizeof(char));
 	str = str + start;
 	i = 0;
