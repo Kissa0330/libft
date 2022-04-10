@@ -3,7 +3,7 @@ char *ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char test(unsigned index, char target)
 {
 	printf("index is %u\ntarget is %c\n", index, target);
-	return 'a';
+	return target + 1;
 }
 int main(int argc, char *argv[]) {
 	char (*f)(unsigned int, char) = 0;

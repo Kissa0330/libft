@@ -3,7 +3,7 @@ void ft_striteri(char *s, void (*f)(unsigned int, char *));
 void test(unsigned index, char *target)
 {
 	printf("index is %u\ntarget is %c\n", index, *target);
-	*target = 'a';
+	*target = *target + 1;
 }
 int main(int argc, char *argv[]) {
 	void (*f)(unsigned int, char *) = 0;
