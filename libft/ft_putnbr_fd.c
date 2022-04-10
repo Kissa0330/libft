@@ -10,10 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-char	*ft_itoa(int n);
-size_t	ft_strlen(char *str);
+#include "libft.h"
 
 void	ft_putnbr_fd(int n, int fd)
 {

@@ -10,11 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stddef.h>
-
-size_t	ft_strlen(char *str);
-char	*ft_strdup(char *src);
+#include "libft.h"
 
 int	count_strs(char *str, char c)
 {

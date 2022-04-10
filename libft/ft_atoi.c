@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	judgestrhead(char *str, int *negativeflag)
 {
 	int	i;

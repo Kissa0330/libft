@@ -10,9 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-size_t	ft_strlen(char *str);
+#include "libft.h"
 
 int	trim_start(char *str, char *set)
 {
