@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
+
 size_t	ft_strlen(char *str);
 
 int	trim_start(char *str, char *set)

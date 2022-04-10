@@ -12,6 +12,7 @@
 
 #include <stddef.h>
 #include <stdlib.h>
+
 size_t	ft_strlen(char *str);
 
 char	*ft_strcat(char *s1, char *s2)

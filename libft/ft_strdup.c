@@ -29,8 +29,8 @@ char	*ft_strdup(char *src)
 	i = 0;
 	while (*(src + i) != '\0')
 	{
-		 *(copy_str + i) = *(src + i);
-		 i++;
+		*(copy_str + i) = *(src + i);
+		i++;
 	}
 	*(copy_str + i) = '\0';
 	return (copy_str);

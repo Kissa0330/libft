@@ -11,17 +11,22 @@
 /* ************************************************************************** */
 
 #include <stddef.h>
-void *ft_memmove(void *dst, const void *src, size_t len)
+
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t i = 0;
-	unsigned char *str = (unsigned char *)src;
-	unsigned char *res = (unsigned char *)dst;
+	size_t			i;
+	unsigned char	*str;
+	unsigned char	*res;
+	unsigned char	tmp;
+
+	i = 0;
+	str = (unsigned char *)src;
+	res = (unsigned char *)dst;
 	while (i < len)
 	{
-		unsigned char tmp;
 		tmp = *str++;
 		*res++ = tmp;
 		i++;
 	}
-	return dst;
+	return (dst);
 }

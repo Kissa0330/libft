@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
+
 size_t	ft_strlen(char *str);
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))

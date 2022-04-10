@@ -11,12 +11,13 @@
 /* ************************************************************************** */
 
 #include <stddef.h>
-char *ft_strchr(const char *s, int c)
+
+char	*ft_strchr(const char *s, int c)
 {
-	char *t;
+	char	*t;
 
 	t = (char *)s;
-	while(*t != c)
+	while (*t != c)
 	{
 		if (*t == '\0')
 			return (NULL);

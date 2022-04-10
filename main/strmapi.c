@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   strmapi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rtakano   <rtakano@student.42.fr    >      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/14 02:47:02 by rtakano           #+#    #+#             */
+/*   Updated: 2022/04/09 16:13:48 by rtakano          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 char *ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char test(unsigned index, char target)
