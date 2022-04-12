@@ -18,8 +18,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	unsigned char	*str;
 	unsigned char	*res;
 
-	if(dst == NULL && src == NULL)
-		return NULL;
+	if (dst == NULL && src == NULL)
+		return (NULL);
 	i = 0;
 	str = (unsigned char *)src;
 	res = (unsigned char *)dst;
