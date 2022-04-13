@@ -12,9 +12,17 @@
 
 #include "libft.h"
 
+int	overflow(int negativeflag)
+{
+	if (negativeflag == -1)
+		return (0);
+	else
+		return (-1);
+}
+
 int	ft_atoi(const char *str)
 {
-	int	negativeflag;
+	int				negativeflag;
 	unsigned int	num;
 
 	num = 0;
@@ -22,17 +30,16 @@ int	ft_atoi(const char *str)
 	while (*str == ' ' || *str == '\t' || *str == '\f'
 		|| *str == '\r' || *str == '\n' || *str == '\v')
 		str ++;
-	if (*str == '+')
-		str ++;
-	else if (*str == '-')
+	if (*str == '+' || *str == '-')
 	{
-		negativeflag = -1;
+		if (*str == '-')
+			negativeflag = -1;
 		str ++;
 	}
 	while (*str >= '0' && *str <= '9')
 	{
 		if ((num * 10 + (*str - '0')) / 10 != num)
-			return (negativeflag == -1 ? 0 : -1);
+			return (overflow(negativeflag));
 		num = num * 10 + (*str - '0');
 		str ++;
 	}
