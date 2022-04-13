@@ -12,16 +12,18 @@
 
 #include "libft.h"
 
-char	*tostr(int n, int len, int negativeflag)
+char	*tostr(unsigned int n, int len, int negativeflag)
 {
 	char	*res;
 
-	res = malloc(len * sizeof(char));
-	while (0 <= len)
+	res = malloc((len + 1) * sizeof(char));
+	if (res == NULL)
+		return (NULL);
+	res[len] = '\0';
+	while (0 <= len --)
 	{
-		res[len] = n % 10 + 48;
+		res[len] = n % 10 + '0';
 		n /= 10;
-		len --;
 	}
 	if (negativeflag == 1)
 		res[0] = '-';
@@ -31,22 +33,19 @@ char	*tostr(int n, int len, int negativeflag)
 char	*ft_itoa(int n)
 {
 	int		len;
-	int		i;
 	int		negativeflag;
+	long	i;
 
-	len = 0;
+	len = 1;
 	negativeflag = 0;
+	i = n;
 	if (n < 0)
 	{
-		n *= -1;
+		i = n * -1;
 		negativeflag = 1;
 		len ++;
 	}
-	i = n;
-	while (i / 10 != 0)
-	{
+	while (n /= 10)
 		len++;
-		i /= 10;
-	}
-	return (tostr(n, len, negativeflag));
+	return (tostr(i, len, negativeflag));
 }
