@@ -19,12 +19,11 @@ int main(int argc, char *argv[])
 	char **strs;
 
 	i = 0;
-	strs = ft_split(argv[1], argv[2][0]);
+	strs = ft_split(NULL, '_');
 	while (strs[i])
 	{
 		printf("%s\n", strs[i]);
 		i ++;
 	}
-	
 	return (argc);
 }

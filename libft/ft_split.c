@@ -13,6 +13,20 @@
 #include "libft.h"
 #include <stdio.h>
 
+char	**free_strs(char **strs)
+{
+	unsigned int	i;
+
+	i = 0;
+	while (strs[i])
+	{
+		free(strs[i]);
+		i++;
+	}
+	free(strs);
+	return (NULL);
+}
+
 int	count_strs(const char *str, char c)
 {
 	int	i;
@@ -34,21 +48,17 @@ int	count_strs(const char *str, char c)
 	return (count);
 }
 
-char	**ft_split(char const *s, char c)
+char	**make_split(int count, char *str, char c)
 {
 	char	**strs;
-	char	*str;
-	int		count;
 	int		i;
 	int		j;
 
 	i = 0;
-	count = count_strs(s, c);
 	strs = malloc(sizeof(char *) * (count + 1));
 	if (strs == NULL)
 		return (strs);
 	strs[count] = NULL;
-	str = ft_strdup(s);
 	while (i < count)
 	{
 		while (*str == c)
@@ -56,9 +66,23 @@ char	**ft_split(char const *s, char c)
 		j = 0;
 		while (str[j] != c && str[j] != '\0')
 			j ++;
-		str[j] = '\0';
-		strs[i ++] = ft_strdup(str);
-		str = str + ft_strlen(str) + 1;
+		strs[i] = malloc(sizeof(char) * (j + 1));
+		if (strs[i] == NULL)
+			return (free_strs(strs));
+		ft_strlcpy(strs[i], str, j + 1);
+		str = str + ft_strlen(strs[i++]);
 	}
 	return (strs);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	*str;
+	int		count;
+
+	if (!s)
+		return (NULL);
+	count = count_strs(s, c);
+	str = (char *)s;
+	return (make_split(count, str, c));
 }

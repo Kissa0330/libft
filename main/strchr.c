@@ -12,10 +12,11 @@
 
 #include <stdio.h>
 #include <string.h>
-char *ft_strchr(char *str, char c);
+char *ft_strchr(const char *str, char c);
 int main(int argc, char *argv[])
 {
-	printf("ft_strchr = %s\n",ft_strchr(argv[1], argv[2][0]));
-	printf("strchr = %s\n",strchr(argv[1], argv[2][0]));
+	char s[] = "tripouille";
+	printf("ft_strchr = %s\n",ft_strchr(s, 't' + 256));
+	printf("strchr = %s\n",strchr(s, 't' + 256));
 	return argc;
 }
