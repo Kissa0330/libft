@@ -20,7 +20,7 @@ char	*ft_strnstr(const char *hay, const char *needle, size_t len)
 	i = 0;
 	if (*needle == 0)
 		return ((char *)hay);
-	if(len == 0)
+	if (len == 0)
 		return (NULL);
 	while (hay[i] != '\0' && i < len)
 	{
