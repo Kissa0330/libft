@@ -45,7 +45,10 @@ char	*ft_itoa(int n)
 		negativeflag = 1;
 		len ++;
 	}
-	while (n /= 10)
+	while (n / 10)
+	{
 		len++;
+		n /= 10;
+	}
 	return (tostr(i, len, negativeflag));
 }
