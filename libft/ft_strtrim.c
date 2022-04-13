@@ -72,10 +72,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	if (set == NULL)
 		return (ft_strdup((char *)s1));
-	start = trim_start(s1,set);
+	start = trim_start(s1, set);
 	end = trim_end(s1, set);
-	if(start >= end)
-		return ft_strdup("");
+	if (start >= end)
+		return (ft_strdup(""));
 	res = (char *)malloc(sizeof(char) * (end - start + 1));
 	if (res == NULL)
 		return (NULL);
