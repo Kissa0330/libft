@@ -21,11 +21,9 @@ char	*ft_strdup(char *src)
 	length = 0;
 	while (*(src + length) != '\0')
 		length++;
-	copy_str = malloc(sizeof(char) * length);
+	copy_str = malloc(sizeof(char) * (length + 1));
 	if (copy_str == NULL)
-	{
 		return (copy_str);
-	}
 	i = 0;
 	while (*(src + i) != '\0')
 	{
