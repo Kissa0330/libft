@@ -52,6 +52,7 @@ char	**ft_split(char const *s, char c)
 		free(copy_str);
 		return (strs);
 	}
+	strs[count] = NULL;
 	while (i < count && str)
 	{
 		while (*copy_str == '\0')
@@ -59,6 +60,5 @@ char	**ft_split(char const *s, char c)
 		strs[i++] = ft_strdup(copy_str);
 		copy_str = copy_str + ft_strlen(copy_str);
 	}
-	strs[i] = NULL;
 	return (strs);
 }

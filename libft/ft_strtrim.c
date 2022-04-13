@@ -12,78 +12,73 @@
 
 #include "libft.h"
 
-int	trim_start(char *str, char *set)
+size_t	trim_start(const char *str, const char *set)
 {
-	int	i;
-	int	j;
-	int	flag;
+	size_t	i;
+	int		j;
 
 	i = 0;
 	while (str[i] != '\0')
 	{
-		flag = 0;
 		j = 0;
 		while (set[j] != '\0')
 		{
 			if (str[i] == set[j])
-				flag = 1;
+			{
+				i++ ;
+				break ;
+			}
 			j ++;
 		}
-		if (flag == 1)
-			i++;
-		else
+		if (set[j] == '\0')
 			break ;
 	}
 	return (i);
 }
 
-char	*trim_end(char *str, char *set)
+size_t	trim_end(const char *str, const char *set)
 {
-	int	len;
-	int	i;
-	int	j;
-	int	flag;
+	size_t	len;
+	size_t	i;
+	int		j;
 
-	len = ft_strlen(str);
-	i = 1;
-	while (str[len - i] != '\0')
+	len = ft_strlen((char *)str);
+	i = 0;
+	while (str[len - i - 1] != '\0')
 	{
-		flag = 0;
 		j = 0;
 		while (set[j] != '\0')
 		{
-			if (str[len - i] == set[j])
-				flag = 1;
+			if (str[len - i - 1] == set[j])
+			{
+				i ++;
+				break ;
+			}
 			j ++;
 		}
-		if (flag == 1)
-			i++;
-		else
+		if (set[j] == '\0')
 			break ;
 	}
-	str[len - i + 1] = '\0';
-	return (str);
+	return (len - i);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*str;
-	char	*tosearch;
 	char	*res;
-	int		start;
-	int		i;
+	size_t	start;
+	size_t	end;
 
-	str = (char *)s1;
-	tosearch = (char *)set;
-	start = trim_start(str, tosearch);
-	res = malloc((ft_strlen(str) - start) * sizeof(char));
+	if (s1 == NULL)
+		return (NULL);
+	if (set == NULL)
+		return (ft_strdup((char *)s1));
+	start = trim_start(s1,set);
+	end = trim_end(s1, set);
+	if(start >= end)
+		return ft_strdup("");
+	res = (char *)malloc(sizeof(char) * (end - start + 1));
 	if (res == NULL)
-		return (res);
-	i = 0;
-	while (str[start + i] != '\0')
-	{
-		res[i] = str[start + i];
-		i++;
-	}
-	return (trim_end(res, tosearch));
+		return (NULL);
+	ft_strlcpy(res, s1 + start, end - start + 1);
+	return (res);
 }
