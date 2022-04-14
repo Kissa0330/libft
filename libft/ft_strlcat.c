@@ -17,26 +17,17 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	size_t	count1;
 	size_t	count2;
 
-	count1 = 0;
+	count1 = ft_strlen(dest);
 	count2 = 0;
-	while (dest[count1] != '\0')
-	{
-		count1++;
-	}
-	while (src[count2] != '\0')
+	if (size == 0)
+		return (ft_strlen((char *)src));
+	if (count1 >= size)
+		return (size + ft_strlen(src));
+	while (src[count2] != '\0' && count1 + count2 < size - 1)
 	{
 		dest[count1 + count2] = src[count2];
 		count2++;
 	}
-	if (count1 >= size)
-	{
-		dest[count1] = '\0';
-		return (size + count2);
-	}
-	else if (count1 + count2 >= size)
-	{
-		dest[size - 1] = '\0';
-	}
 	dest[count1 + count2] = '\0';
-	return (count1 + count2);
+	return (count1 + ft_strlen(src));
 }
