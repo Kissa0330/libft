@@ -11,6 +11,6 @@ $(NAME): ${OBJS}
 	gcc -Wall -Wextra -Werror -c $< -o ${<:.c=.o}
 clean:
 	rm -f $(OBJS)
-fclean:
+fclean: clean
 	rm -f $(NAME)
 re: fclean all
