@@ -14,14 +14,9 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	size_t	length;
-
-	length = ft_strlen(s);
-	while (length > INT_MAX)
+	while (s != NULL && *s != '\0')
 	{
-		write(fd, s, INT_MAX);
-		s = s + INT_MAX;
-		length = length - INT_MAX;
+		ft_putchar_fd(*s, fd);
+		s += 1;
 	}
-	write(fd, s, length);
 }

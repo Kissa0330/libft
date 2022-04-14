@@ -16,6 +16,7 @@ char *ft_strchr(const char *str, char c);
 int main(int argc, char *argv[])
 {
 	char s[] = "tripouille";
+	printf("t + 256 = %c\n",'t' + 256);
 	printf("ft_strchr = %s\n",ft_strchr(s, 't' + 256));
 	printf("strchr = %s\n",strchr(s, 't' + 256));
 	return argc;

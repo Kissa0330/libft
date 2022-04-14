@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 	char **strs;
 
 	i = 0;
-	strs = ft_split(NULL, '_');
+	strs = ft_split(NULL, argv[2][0]);
 	while (strs[i])
 	{
 		printf("%s\n", strs[i]);

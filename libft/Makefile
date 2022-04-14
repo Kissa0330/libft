@@ -5,12 +5,17 @@ OBJS = ${FILES:.c=.o}
 .PHONY : all clean fclean re
 
 all: $(NAME)
+
 $(NAME): ${OBJS}
 	ar rcs $(NAME) $(OBJS)
+
 .c.o :
 	gcc -Wall -Wextra -Werror -c $< -o ${<:.c=.o}
+
 clean:
 	rm -f $(OBJS)
+
 fclean: clean
 	rm -f $(NAME)
+
 re: fclean all
