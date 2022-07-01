@@ -15,13 +15,9 @@
 char	*ft_strdup(const char *src)
 {
 	char	*copy_str;
-	int		length;
 	int		i;
 
-	length = 0;
-	while (*(src + length) != '\0')
-		length++;
-	copy_str = malloc(sizeof(char) * (length + 1));
+	copy_str = malloc(sizeof(char) * (ft_strlen(src) + 1));
 	if (copy_str == NULL)
 		return (copy_str);
 	i = 0;
