@@ -19,7 +19,6 @@ int	overflow(int negativeflag)
 	else
 		return (-1);
 }
-
 int	ft_atoi(const char *str)
 {
 	int				negativeflag;

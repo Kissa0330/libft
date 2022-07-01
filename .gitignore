@@ -1,6 +1,6 @@
 .DS_Store
 *.out
-*.o
-*.a
-/libftTester
+libft/*.o
+libft/*.a
+libft/libftTester
 /libft-unit-test

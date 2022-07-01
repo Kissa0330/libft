@@ -17,10 +17,10 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	size_t	count1;
 	size_t	count2;
 
-	count1 = ft_strlen(dest);
-	count2 = 0;
 	if (size == 0)
 		return (ft_strlen((char *)src));
+	count1 = ft_strlen(dest);
+	count2 = 0;
 	if (count1 >= size)
 		return (size + ft_strlen(src));
 	while (src[count2] != '\0' && count1 + count2 < size - 1)

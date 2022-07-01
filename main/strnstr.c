@@ -15,7 +15,7 @@
 char *ft_strnstr(char *str, char *c, size_t t);
 int main(int argc, char *argv[])
 {
-	printf("ft_strnstr = %s\n", ft_strnstr("abbbcdefg", NULL, 20));
-	// printf("strnstr = %s\n", strnstr("abbbcdefg", NULL, 20));
+	printf("ft_strnstr = %s\n", ft_strnstr(NULL, "is", 0));
+	printf("strnstr = %s\n", strnstr(NULL, "is", 0));
 	return argc;
 }
